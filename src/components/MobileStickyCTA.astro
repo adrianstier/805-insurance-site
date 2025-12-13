@@ -1,0 +1,61 @@
+---
+// Mobile sticky CTA bar - shows on scroll
+---
+
+<div id="mobile-sticky-cta" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg transform translate-y-full transition-transform duration-300 z-50 md:hidden">
+  <div class="px-4 py-3">
+    <div class="flex items-center justify-between gap-4">
+      <div class="flex-1">
+        <p class="text-sm font-semibold text-gray-900">Save up to $547/year</p>
+        <p class="text-xs text-gray-500">Free quotes in 60 seconds</p>
+      </div>
+      <a
+        href="#quote-form"
+        class="flex-shrink-0 bg-orange-500 text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-orange-600 transition-colors shadow-md"
+      >
+        Get Quote
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const stickyCta = document.getElementById('mobile-sticky-cta');
+  const quoteForm = document.getElementById('quote-form');
+  let lastScrollY = 0;
+  let ticking = false;
+
+  function updateStickyCta() {
+    const scrollY = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    
+    // Show after scrolling past first viewport
+    if (scrollY > viewportHeight * 0.5) {
+      // Check if quote form is in view
+      if (quoteForm) {
+        const formRect = quoteForm.getBoundingClientRect();
+        const formInView = formRect.top < viewportHeight && formRect.bottom > 0;
+        
+        if (formInView) {
+          stickyCta?.classList.add('translate-y-full');
+        } else {
+          stickyCta?.classList.remove('translate-y-full');
+        }
+      } else {
+        stickyCta?.classList.remove('translate-y-full');
+      }
+    } else {
+      stickyCta?.classList.add('translate-y-full');
+    }
+    
+    lastScrollY = scrollY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateStickyCta);
+      ticking = true;
+    }
+  });
+</script>

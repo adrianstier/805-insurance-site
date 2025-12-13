@@ -5,30 +5,37 @@ import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import LeadForm from '../components/LeadForm.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import MobileStickyCTA from '../components/MobileStickyCTA.astro';
 import FAQ from '../components/FAQ.astro';
 
 const services = [
   {
     title: "Auto Insurance",
-    description: "Comprehensive coverage for your vehicle with competitive rates. Protect yourself on Goleta's roads with liability, collision, and comprehensive options.",
+    description: "Save hundreds on car insurance in Goleta and Santa Barbara. Compare rates from 20+ carriers for liability, collision, and comprehensive coverage.",
     href: "/auto-insurance-goleta",
     icon: "car" as const
   },
   {
     title: "Home Insurance",
-    description: "Safeguard your biggest investment. Coverage for Goleta and Santa Barbara homes against fire, theft, natural disasters, and liability.",
+    description: "Protect your Santa Barbara County home from wildfires, earthquakes, and more. Local agents who understand coastal California risks.",
     href: "/home-insurance-goleta",
     icon: "home" as const
   },
   {
     title: "Renters Insurance",
-    description: "Affordable protection for UCSB students and Isla Vista residents. Cover your belongings and get liability protection starting under $20/month.",
+    description: "UCSB students and Isla Vista residents - protect your stuff for as low as $15/month. Covers theft, liability, and more.",
     href: "/renters-insurance-goleta",
     icon: "users" as const
   },
   {
+    title: "Life Insurance",
+    description: "Protect your Goleta family's future. Term life starting at $20/month. Lock in low rates while you're young and healthy.",
+    href: "/life-insurance-goleta",
+    icon: "heart" as const
+  },
+  {
     title: "Business Insurance",
-    description: "Tailored coverage for Goleta's growing businesses. From general liability to workers' comp, we protect your livelihood.",
+    description: "Coverage for Goleta and Santa Barbara businesses. General liability, workers' comp, and commercial property from local experts.",
     href: "/business-insurance-goleta",
     icon: "building" as const
   }
@@ -37,30 +44,30 @@ const services = [
 const faqs = [
   {
     question: "Why should I choose a local Goleta insurance agent?",
-    answer: "A local agent understands the unique risks of living in the Goleta and Santa Barbara area, including wildfire zones, coastal flooding, and local traffic patterns. We can help you find coverage that addresses these specific concerns while potentially saving you money with regional discounts."
+    answer: "A local agent understands the unique risks of living in the Goleta and Santa Barbara area, including wildfire zones, coastal flooding, and local traffic patterns. They can help you find coverage that addresses these specific concerns while potentially saving you money with regional discounts."
   },
   {
     question: "How quickly can I get a quote?",
-    answer: "Most quotes can be provided within 24 hours. For simple auto or renters insurance, you may receive a quote within a few hours. Our local agents work quickly to get you the coverage you need."
+    answer: "Most quotes can be provided within 24 hours. For simple auto or renters insurance, you may receive a quote within a few hours. Local agents work quickly to get you the coverage you need."
   },
   {
     question: "Do you offer discounts for UCSB students?",
-    answer: "Yes! We offer special rates for UCSB students on renters and auto insurance. Good student discounts, multi-policy bundles, and safe driver programs can help reduce your premiums significantly."
+    answer: "Yes! Local agents offer special rates for UCSB students on renters and auto insurance. Good student discounts, multi-policy bundles, and safe driver programs can help reduce your premiums significantly."
   },
   {
     question: "What areas do you serve?",
-    answer: "We proudly serve Goleta, Santa Barbara, Isla Vista, Carpinteria, Montecito, and the surrounding Central Coast communities. Our agents are familiar with the specific insurance needs of each neighborhood."
+    answer: "We connect you with agents serving Goleta, Santa Barbara, Isla Vista, Carpinteria, Montecito, and the surrounding Central Coast communities. Our network of agents is familiar with the specific insurance needs of each neighborhood."
   },
   {
     question: "Can you help with claims?",
-    answer: "Absolutely. As your local insurance advocate, we guide you through the entire claims process. From filing the initial claim to negotiating with insurance companies, we're here to help you get the settlement you deserve."
+    answer: "Absolutely. Your local insurance agent will guide you through the entire claims process. From filing the initial claim to negotiating with insurance companies, they're there to help you get the settlement you deserve."
   }
 ];
 ---
 
 <BaseLayout
-  title="Bealer Insurance | Auto, Home & Renters Insurance in Goleta, CA"
-  description="Local insurance agency in Goleta, CA. Get competitive quotes on auto, home, renters, and business insurance. Serving Santa Barbara, Isla Vista & UCSB students."
+  title="Goleta Insurance | Auto, Home & Renters Insurance in Goleta, CA"
+  description="Find local insurance agents in Goleta, CA. Get competitive quotes on auto, home, renters, and business insurance. Serving Santa Barbara, Isla Vista & UCSB students."
 >
   <Header slot="header" currentPath="/" />
 
@@ -75,7 +82,7 @@ const faqs = [
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Insurance Services for Every Need</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          From protecting your car on Highway 101 to insuring your Goleta home against wildfires, we've got you covered.
+          From protecting your car on Highway 101 to insuring your Goleta home against wildfires, we connect you with the right coverage.
         </p>
       </div>
 
@@ -93,7 +100,7 @@ const faqs = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <h2 class="text-3xl font-bold text-gray-900 mb-6">
-            Why Goleta Families Trust Bealer Insurance
+            Why Goleta Families Choose Local Agents
           </h2>
           <div class="space-y-6">
             <div class="flex gap-4">
@@ -103,8 +110,8 @@ const faqs = [
                 </svg>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900">Local Expertise Since 1985</h3>
-                <p class="text-gray-600">Nearly 40 years of experience serving the Goleta and Santa Barbara community.</p>
+                <h3 class="font-semibold text-gray-900">Local Expertise</h3>
+                <p class="text-gray-600">Agents who understand the unique risks of the Goleta and Santa Barbara area.</p>
               </div>
             </div>
             <div class="flex gap-4">
@@ -115,7 +122,7 @@ const faqs = [
               </div>
               <div>
                 <h3 class="font-semibold text-gray-900">Multiple Carrier Options</h3>
-                <p class="text-gray-600">We compare rates from 20+ top insurance carriers to find you the best coverage and price.</p>
+                <p class="text-gray-600">Compare rates from 20+ top insurance carriers to find the best coverage and price.</p>
               </div>
             </div>
             <div class="flex gap-4">
@@ -126,7 +133,7 @@ const faqs = [
               </div>
               <div>
                 <h3 class="font-semibold text-gray-900">Claims Advocacy</h3>
-                <p class="text-gray-600">When you need to file a claim, we're in your corner. Our agents help you navigate the process.</p>
+                <p class="text-gray-600">When you need to file a claim, your agent is in your corner to help navigate the process.</p>
               </div>
             </div>
             <div class="flex gap-4">
@@ -136,8 +143,8 @@ const faqs = [
                 </svg>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900">Community Focused</h3>
-                <p class="text-gray-600">We're your neighbors. Find us at local events and supporting Goleta causes.</p>
+                <h3 class="font-semibold text-gray-900">Personalized Service</h3>
+                <p class="text-gray-600">Work with real people who care about your coverage, not a call center.</p>
               </div>
             </div>
           </div>
@@ -147,20 +154,20 @@ const faqs = [
         <div class="bg-blue-600 rounded-2xl p-8 text-white">
           <div class="grid grid-cols-2 gap-8">
             <div class="text-center">
-              <div class="text-4xl font-bold mb-2">40+</div>
-              <div class="text-blue-200">Years in Business</div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl font-bold mb-2">5,000+</div>
-              <div class="text-blue-200">Policies Written</div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl font-bold mb-2">500+</div>
-              <div class="text-blue-200">5-Star Reviews</div>
-            </div>
-            <div class="text-center">
               <div class="text-4xl font-bold mb-2">20+</div>
-              <div class="text-blue-200">Insurance Partners</div>
+              <div class="text-blue-200">Insurance Carriers</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold mb-2">24hr</div>
+              <div class="text-blue-200">Quote Turnaround</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold mb-2">100%</div>
+              <div class="text-blue-200">Licensed Agents</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold mb-2">Free</div>
+              <div class="text-blue-200">No-Obligation Quotes</div>
             </div>
           </div>
         </div>
@@ -179,7 +186,7 @@ const faqs = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Serving the Central Coast</h2>
-        <p class="text-lg text-gray-600">Proud to protect families and businesses across these communities</p>
+        <p class="text-lg text-gray-600">Connecting you with agents across these communities</p>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -193,4 +200,5 @@ const faqs = [
   </section>
 
   <Footer slot="footer" />
+  <MobileStickyCTA slot="sticky-cta" />
 </BaseLayout>

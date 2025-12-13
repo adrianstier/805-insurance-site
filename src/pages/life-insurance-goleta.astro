@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import LeadForm from '../components/LeadForm.astro';
+import FAQ from '../components/FAQ.astro';
+
+const coverageTypes = [
+  {
+    title: "Term Life Insurance",
+    description: "Affordable coverage for a specific period (10, 20, or 30 years). Ideal for protecting your family while paying off a mortgage or raising children."
+  },
+  {
+    title: "Whole Life Insurance",
+    description: "Permanent coverage that lasts your entire life with a cash value component that grows over time. Provides both protection and savings."
+  },
+  {
+    title: "Universal Life Insurance",
+    description: "Flexible permanent coverage that lets you adjust premiums and death benefits as your needs change throughout life."
+  },
+  {
+    title: "Final Expense Insurance",
+    description: "Smaller policies designed to cover funeral costs and end-of-life expenses, typically with simplified underwriting."
+  }
+];
+
+const benefits = [
+  {
+    title: "Income Replacement",
+    description: "Replace lost income so your family can maintain their lifestyle, pay bills, and cover daily expenses."
+  },
+  {
+    title: "Mortgage Protection",
+    description: "Pay off your Goleta home mortgage so your family doesn't lose their home if something happens to you."
+  },
+  {
+    title: "College Funding",
+    description: "Ensure your children can still attend UCSB or other colleges even if you're not there to provide for them."
+  },
+  {
+    title: "Debt Coverage",
+    description: "Cover outstanding debts including car loans, credit cards, and student loans so your family isn't burdened."
+  },
+  {
+    title: "Business Continuation",
+    description: "Protect your Goleta business with key person insurance or fund buy-sell agreements."
+  },
+  {
+    title: "Legacy Planning",
+    description: "Leave a financial legacy for your loved ones or favorite charitable organizations."
+  }
+];
+
+const faqs = [
+  {
+    question: "How much life insurance do I need?",
+    answer: "A common rule of thumb is 10-12 times your annual income, but the right amount depends on your specific situation: mortgage balance, number of dependents, existing savings, and future expenses like college. A local agent can help you calculate the right coverage amount for your family."
+  },
+  {
+    question: "What's the difference between term and whole life insurance?",
+    answer: "Term life insurance provides coverage for a specific period (like 20 years) and is generally more affordable. Whole life insurance covers you for life and builds cash value over time, but costs more. Many Goleta families start with term insurance and add permanent coverage later."
+  },
+  {
+    question: "How much does life insurance cost in California?",
+    answer: "Costs vary widely based on age, health, coverage amount, and policy type. A healthy 30-year-old might pay $20-30/month for a $500,000 term policy. Rates increase with age, so the best time to buy is when you're young and healthy."
+  },
+  {
+    question: "Do I need a medical exam for life insurance?",
+    answer: "Traditional policies require a medical exam for the best rates. However, many carriers now offer no-exam policies with simplified underwriting. These are convenient but may cost more or offer lower coverage limits."
+  },
+  {
+    question: "Can I get life insurance if I have health issues?",
+    answer: "Yes! While some conditions may affect rates or coverage options, many people with health issues can still get life insurance. A local agent can shop multiple carriers to find the best options for your specific situation."
+  },
+  {
+    question: "When should I buy life insurance?",
+    answer: "The best time is now - you're never younger or healthier than today. Key life events like marriage, buying a home in Goleta, having children, or starting a business are all good triggers to get or increase coverage."
+  }
+];
+---
+
+<BaseLayout
+  title="Life Insurance Goleta, CA | Term & Whole Life Quotes | Goleta Insurance"
+  description="Protect your Goleta family with affordable life insurance. Compare term and whole life quotes from local agents. Free quotes, no obligation."
+>
+  <Header slot="header" currentPath="/life-insurance-goleta" />
+
+  <Hero
+    title="Protect Your Family's Future in Goleta"
+    subtitle="Affordable life insurance from local agents who understand your needs. Get peace of mind knowing your loved ones are protected."
+    ctaText="Get Your Free Quote"
+  />
+
+  <!-- Why Life Insurance Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Goleta Families Need Life Insurance</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Life insurance isn't just about death - it's about living without financial worry. Protect what matters most.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {benefits.map((benefit) => (
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">{benefit.title}</h3>
+            <p class="text-gray-600 text-sm">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage Types -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Types of Life Insurance</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Find the right coverage type for your family's needs and budget.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {coverageTypes.map((coverage) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">{coverage.title}</h3>
+            <p class="text-gray-600 text-sm">{coverage.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Life Stages Section -->
+  <section class="py-16 bg-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Life Insurance for Every Stage</h2>
+        <p class="text-blue-100 text-lg">Your needs change as life changes. We help you stay protected.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+          <div class="text-4xl mb-4">👫</div>
+          <h3 class="font-semibold mb-2">Newlyweds</h3>
+          <p class="text-blue-100 text-sm">Start building protection for your new life together</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+          <div class="text-4xl mb-4">🏠</div>
+          <h3 class="font-semibold mb-2">Homeowners</h3>
+          <p class="text-blue-100 text-sm">Protect your Goleta home investment</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+          <div class="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+          <h3 class="font-semibold mb-2">Parents</h3>
+          <p class="text-blue-100 text-sm">Ensure your children's future is secure</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
+          <div class="text-4xl mb-4">💼</div>
+          <h3 class="font-semibold mb-2">Business Owners</h3>
+          <p class="text-blue-100 text-sm">Key person and succession planning</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Life Insurance is More Affordable Than You Think
+          </h2>
+          <p class="text-gray-600 mb-6">
+            Many people overestimate the cost of life insurance by 3x or more. The reality? A healthy adult can often get substantial coverage for less than their monthly streaming subscriptions.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">$500K term policy: as low as $20/month</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">Lock in rates while you're young and healthy</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">Compare quotes from 20+ carriers</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">Sample Monthly Rates*</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+              <div>
+                <div class="font-medium text-gray-900">Age 25, $500K Term</div>
+                <div class="text-sm text-gray-500">20-year term, healthy non-smoker</div>
+              </div>
+              <div class="text-2xl font-bold text-blue-600">$18/mo</div>
+            </div>
+            <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+              <div>
+                <div class="font-medium text-gray-900">Age 35, $500K Term</div>
+                <div class="text-sm text-gray-500">20-year term, healthy non-smoker</div>
+              </div>
+              <div class="text-2xl font-bold text-blue-600">$25/mo</div>
+            </div>
+            <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+              <div>
+                <div class="font-medium text-gray-900">Age 45, $500K Term</div>
+                <div class="text-sm text-gray-500">20-year term, healthy non-smoker</div>
+              </div>
+              <div class="text-2xl font-bold text-blue-600">$55/mo</div>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500 mt-4 text-center">
+            *Sample rates for illustration. Your actual rate depends on health, coverage amount, and other factors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Form -->
+  <LeadForm
+    insuranceType="life"
+    heading="Get Your Free Life Insurance Quote"
+    subheading="Protect your Goleta family - compare rates from top carriers"
+  />
+
+  <!-- FAQ Section -->
+  <FAQ title="Life Insurance FAQs" faqs={faqs} />
+
+  <!-- Related Services -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Complete Family Protection</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/home-insurance-goleta" class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <h3 class="font-semibold text-gray-900 mb-2">Home Insurance</h3>
+          <p class="text-gray-600 text-sm">Protect your Goleta home and belongings from fire, theft, and natural disasters.</p>
+        </a>
+        <a href="/auto-insurance-goleta" class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <h3 class="font-semibold text-gray-900 mb-2">Auto Insurance</h3>
+          <p class="text-gray-600 text-sm">Bundle auto with life insurance for additional savings on your premiums.</p>
+        </a>
+        <a href="/business-insurance-goleta" class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <h3 class="font-semibold text-gray-900 mb-2">Business Insurance</h3>
+          <p class="text-gray-600 text-sm">Key person life insurance and business succession planning.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

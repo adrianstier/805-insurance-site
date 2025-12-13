@@ -52,32 +52,16 @@ import '../styles/global.css';
     <!-- Local Business Schema -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "InsuranceAgency",
-      "name": "Bealer Insurance - Goleta",
-      "description": "Local insurance agency serving Goleta, Santa Barbara, and Isla Vista with auto, home, renters, and business insurance.",
+      "@type": "LocalBusiness",
+      "name": "Goleta Insurance",
+      "description": "Insurance quote service connecting residents of Goleta, Santa Barbara, and Isla Vista with local licensed insurance agents.",
       "url": canonical,
-      "telephone": "(805) 555-0123",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Main Street",
-        "addressLocality": "Goleta",
-        "addressRegion": "CA",
-        "postalCode": "93117",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 34.4358,
-        "longitude": -119.8276
-      },
       "areaServed": [
         "Goleta, CA",
         "Santa Barbara, CA",
         "Isla Vista, CA",
         "Carpinteria, CA"
-      ],
-      "openingHours": "Mo-Fr 09:00-17:00",
-      "priceRange": "$$"
+      ]
     })} />
 
     <!-- Google Analytics -->
@@ -95,5 +79,6 @@ import '../styles/global.css';
       <slot />
     </main>
     <slot name="footer" />
+    <slot name="sticky-cta" />
   </body>
 </html>
