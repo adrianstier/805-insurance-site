@@ -1,10 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import LeadForm from '../components/LeadForm.astro';
 import FAQ from '../components/FAQ.astro';
+import ucsbCampus from '../assets/images/ucsb-campus-small.webp';
 
 const coverageTypes = [
   {
@@ -76,11 +78,24 @@ const faqs = [
   <!-- Why Renters Insurance -->
   <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Why UCSB Students Need Renters Insurance</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Isla Vista has one of the highest bike theft rates in California. Protect your laptop, bike, and belongings for less than Netflix.
-        </p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Why UCSB Students Need Renters Insurance</h2>
+          <p class="text-lg text-gray-600">
+            Isla Vista has one of the highest bike theft rates in California. Protect your laptop, bike, and belongings for less than Netflix.
+          </p>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <Image
+            src={ucsbCampus}
+            alt="UCSB Storke Tower and campus in Goleta, California"
+            class="w-full h-auto"
+            loading="lazy"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+            <p class="text-white text-sm">UCSB Campus, Goleta</p>
+          </div>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
