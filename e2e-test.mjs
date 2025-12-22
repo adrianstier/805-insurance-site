@@ -4,11 +4,11 @@
  * Tests: Navigation, Forms, Images, Mobile Responsiveness, SEO, Performance
  *
  * Usage: node e2e-test.mjs [--live]
- *   --live    Test the live site (bealer-insurance-site.pages.dev)
+ *   --live    Test the live site (805-insurance.pages.dev)
  *   default   Test local dev server (localhost:4321)
  */
 
-const LIVE_URL = 'https://bealer-insurance-site.pages.dev';
+const LIVE_URL = 'https://805-insurance.pages.dev';
 const LOCAL_URL = 'http://localhost:4321';
 const isLive = process.argv.includes('--live');
 const BASE_URL = isLive ? LIVE_URL : LOCAL_URL;
@@ -325,7 +325,7 @@ async function testCompliance() {
     const pageName = path === '/' ? 'Homepage' : path.replace(/\//g, '');
 
     // No agent name
-    if (!html.toLowerCase().includes('bealer') && !html.toLowerCase().includes('derrick')) {
+    if (!html.toLowerCase().includes('derrick')) {
       log('pass', `${pageName}: No agent name displayed`);
     } else {
       log('fail', `${pageName}: Agent name found (compliance violation)`);

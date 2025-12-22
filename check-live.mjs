@@ -5,9 +5,8 @@ const page = await browser.newPage();
 
 // Check possible URLs
 const urls = [
-  'https://bealer-insurance.pages.dev',
-  'https://bealer-insurance-site.pages.dev',
-  'https://goleta-insurance-site.pages.dev'
+  'https://805-insurance.pages.dev',
+  'https://805insurance.com'
 ];
 
 for (const url of urls) {

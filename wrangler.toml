@@ -1,5 +1,5 @@
 # Cloudflare Pages configuration
-name = "bealer-insurance"
+name = "805-insurance"
 compatibility_date = "2024-12-01"
 
 [site]
